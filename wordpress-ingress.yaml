@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1 # versão do Kubernetes necessária p/ criar objetos do tipo Ingress
+kind: Ingress
+metadata: # informações que ajudam a identificar de forma única o objeto (por exemplo: name & UID)
+  name: wordpress
+  namespace: labwordpress
+spec:
+  rules: # configurações do ingress
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: # refere-se a um serviço que será usado como backend
+            name: wordpress
+            port:
+              number: 80
