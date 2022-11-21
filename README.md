@@ -22,13 +22,9 @@ Esta documentação explicitará os passos para serem executados tanto no sistem
 
 ### 1. Configuração
 1. Abra o docker desktop
-
 2. Vá no ícone de configuração
-
 3. Aba Kubernetes
-
 4. "Enable Kubernetes"
-
 5. "Apply & restart"
 
 ![Conf kubernetes](https://user-images.githubusercontent.com/91745101/203157780-e1f68a61-ab98-49fe-b812-87221d655718.png)
@@ -55,20 +51,15 @@ kubectl apply -f mysql-service.yaml
 ```  
 5. Crie um arquivo password.txt contendo a senha para o MySQL
 6. Use o comando abaixo para criar o secret
-
 *Lembre-se de criar uma senha forte, com no mínimo 8 caracteres e ao menos 1 letra minúscula, 1 letra maiúscula, 1 número e 1 sinal de pontuação*
-
 ```
 kubectl create secret generic mysql-pass --from-file=password.txt -n labwordpress
 ```  
-
 7. Suba o arquivo Persistent Volume Claim (PVC) do MySQL
-
 ```
 kubectl apply -f mysql-pvc.yaml
 ```  
 8. Suba o arquivo deployment MySQL
-
 ```
 kubectl apply -f mysql-deployment.yaml
 ```  
