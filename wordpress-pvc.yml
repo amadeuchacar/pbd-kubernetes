@@ -8,3 +8,6 @@ metadata: # informações que ajudam a identificar de forma única o objeto (por
 spec: # estado do PersistentVolumeClaim a ser criado
   accessModes:
     - ReadWriteOnce # o volume pode ser montado como leitura-escrita por um nó único
+  resources:
+    requests: # mínimo de recursos computacional requerido
+      storage: 3G
