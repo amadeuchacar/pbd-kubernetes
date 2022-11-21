@@ -1,0 +1,12 @@
+apiVersion: v1 # a versão do Kubernetes necessária para criar objetos do tipo Service
+kind: Service # o tipo do objeto a ser criado
+metadata: # informações que ajudam a identificar de forma única o objeto (por exemplo: name, UID)
+  name: wordpress
+  namespace: labwordpress
+  labels:
+    app: wordpress
+spec: # estado do Service a ser criado
+  selector: # serviço estará disponível apenas para pods com metadata correspondente
+    app: wordpress
+    tier: frontend
+  clusterIP: None # serviço headless
