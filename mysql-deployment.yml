@@ -36,3 +36,10 @@ spec: # estado do Deployment a ser criado
         ports: # lista da portas a serem expostas do container
         - containerPort: 3308 # número da porta
           name: mysql # nome da porta, dever ser único dentro do pod
+        volumeMounts: # volumes a serem montados dentro do filesystem do container
+        - name: mysql-persistent-storage-lab
+          mountPath: /var/lib/mysql
+      volumes: # lista dos volumes que podem ser montados dentro dos containers do pod
+      - name: mysql-persistent-storage-lab
+        persistentVolumeClaim: # referencia para um PersistentVolumeClaim dentro do mesmo namespace
+          claimName: mysql-pv-claim
