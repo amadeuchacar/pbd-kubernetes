@@ -105,9 +105,35 @@ kubectl apply -f wordpress-ingress-2.yaml
 
 ![config hosts](https://user-images.githubusercontent.com/91745101/203161971-8761d83d-3884-47c2-b07f-e65054430c54.png)
 
+## Linux
 
- 
- 
+- `sudo chmod u+x apply.sh delete.sh`: execute para tornar os script executáveis
+- `./apply.sh password`: apply todos os arquivos de configuração desse repositório e ao final imprime a URI do WordPress
+  - ATENÇÃO: substitua 'password' por uma senha de no mínimo 8 caracteres e que contém ao menos 1 letra minúscula, 1 letra maiúscula, 1 número e 1 sinal de pontuação
+- `./delete.sh` = execute esse comando somente quando queira remover todos os resources criados no apply
 
+## Troubleshooting
 
+### Pod status `ImagePullBackOff` após apply
 
+- após rodar o script `apply.sh` pela primeira vez, consulte se o status de algum pod é 'ImagePullBackOff' (`kubectl get pods`)
+- esse erro ocorre quando minikube ainda não possui a imagem(s) que algum pod requer
+- para solucionar esse erro, é necessário realizar o download da imagem(s) manualmente
+  - se o problema está ocorrendo no pod do WordPress, rode `minikube ssh docker pull wordpress:6.1.0-apache`
+  - se o problema está ocorrendo no pod do MySQL, rode `minikube ssh docker pull mysql:8.0.31`
+  - se o problema está ocorrendo em ambos os pods, rode ambos os comandos
+- após o pull(s) ser concluído, execute `kubectl get pods` e os status dos pods devem ser 'Running'
+
+## Referências
+
+- [Example: Deploying WordPress and MySQL with Persistent Volumes](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
+- [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [How to Manage Secrets in Kubernetes – A Complete Guide](https://spacelift.io/blog/kubernetes-secrets)
+- [Kubernetes size definitions: What's the difference of "Gi" and "G"?](https://stackoverflow.com/a/50805048)
+- [Error while pulling image](https://github.com/kubernetes/minikube/issues/14806)
+- [Set up Ingress on Minikube with the NGINX Ingress Controller](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
+- [https://kubernetes.io/docs/concepts/services-networking/ingress/#terminology](https://kubernetes.io/docs/concepts/services-networking/ingress/#terminology)
+- [Roteando tráfego de rede no Kubernetes com Ingress](https://medium.com/engenharia-arquivei/roteando-tráfego-de-rede-no-kubernetes-com-ingress-315fa2a10272)
+- [How to Deploy WordPress Instance on Kubernetes](https://phoenixnap.com/kb/kubernetes-wordpress)
+- [How to deploy WordPress and MySQL on Kubernetes](https://medium.com/@containerum/how-to-deploy-wordpress-and-mysql-on-kubernetes-bda9a3fdd2d5)
+- [Getting Started with Kubernetes on Docker Desktop](https://birthday.play-with-docker.com/kubernetes-docker-desktop/)
