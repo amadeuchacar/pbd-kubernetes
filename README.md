@@ -1,4 +1,4 @@
-# (CompassPB) - Atividade Docker - DevSecOps
+# (CompassPB) - Atividade Kubernetes - DevSecOps
 ### Atividade realizada por Amadeu Chacar, Luiz Gustavo e Rodrigo Pacheco
 
 ## Objetivo
@@ -22,8 +22,15 @@
 ![Conf kubernetes](https://user-images.githubusercontent.com/91745101/203157780-e1f68a61-ab98-49fe-b812-87221d655718.png)
 
 # 🖥 Executando a aplicação 
+*Todos os arquivos .yaml que serão citados estão versionados neste repositório*
 
-
+## 2. Execução
+### 2.1 Abra o PowerShell e entre no local onde os arquivos .yaml estão presentes
+### 2.2 Como solicitado, crie um namespace labwordpress: kubectl create namespace labwordpress
+```
+ kubectl create namespace labwordpress
+```  
+### 2.3
 
  
  
