@@ -6,6 +6,9 @@ metadata: # informações que ajudam a identificar de forma única o objeto (por
   labels:
     app: wordpress
 spec: # estado do Service a ser criado
+  ports: # lista das portas a serem expostas por esse serviço
+    - protocol: TCP
+      port: 80
   selector: # serviço estará disponível apenas para pods com metadata correspondente
     app: wordpress
     tier: frontend
