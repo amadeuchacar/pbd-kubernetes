@@ -2,6 +2,7 @@ apiVersion: v1 #versão do kubernetes necessária para criar objetos do tipo ser
 kind: Service #tipo do objeto a ser criado
 metadata: #metadados do serviço
   name: mysql #nome do serviço
+  namespace: labwordpress
   labels: #camadas que vai se comunicar
     app: wordpress #app onde vai se comunicar
 spec: #especificações
