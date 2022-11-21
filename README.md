@@ -71,10 +71,15 @@ kubectl apply -f wordpress-pvc.yaml
 ```
 kubectl apply -f wordpress-deployment.yaml
 ``` 
-### 2.14 Por fim, suba o arquivo ingress
+### 2.14 Suba o arquivo ingress
 ```
 kubectl apply -f wordpress-ingress.yaml
 ``` 
+### 2.15 Por fim, acesse o arquivo hosts (como administrador) contido no diretório: C:\Windows\System32\drivers\etc
+### 2.16 Adicione o localhost com o endereço contido no arquivo ingress
+
+
+![config hosts](https://user-images.githubusercontent.com/91745101/203161971-8761d83d-3884-47c2-b07f-e65054430c54.png)
 
 
  
