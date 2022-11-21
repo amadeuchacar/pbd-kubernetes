@@ -5,7 +5,7 @@
 *Aplicar os conhecimentos adquiridos na trilha de Kubernetes*
 
 # 🔨 Configurando Docker Desktop 
-*Atividade realizada no Windows*
+*Atividade realizada no Windows 10*
 
 ## Requisitos
 - Docker Desktop: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
@@ -19,6 +19,12 @@
 ### 1.3 Aba Kubernetes 
 ### 1.4 "Enable Kubernetes"
 ### 1.5 "Apply & restart"
+
+# 🖥 Executando a aplicação 
+
+
+
+ 
  
 
 
