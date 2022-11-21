@@ -12,4 +12,4 @@ spec: # estado do Service a ser criado
   selector: # serviço estará disponível apenas para pods com metadata correspondente
     app: wordpress
     tier: frontend
-  type: LoadBalancer
+  clusterIP: None # serviço headless
