@@ -6,7 +6,7 @@ metadata: #metadados do serviço
     app: wordpress #app onde vai se comunicar
 spec: #especificações
   ports:
-    - port: 3306
+    - port: 3308
   selector: # serviço estará disponível apenas para pods com metadata correspondente
     app: wordpress
     tier: mysql
