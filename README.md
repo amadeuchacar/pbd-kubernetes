@@ -4,7 +4,7 @@
 ## Objetivo
 *Aplicar os conhecimentos adquiridos na trilha de Kubernetes*
 
-🔨 Configurando Docker Desktop 
+# 🔨 Configurando Docker Desktop 
 *Atividade realizada no Windows*
 
 ## Requisitos
