@@ -1,0 +1,38 @@
+apiVersion: apps/v1 # a versão do Kubernetes necessária para criar objetos do tipo Deployment
+kind: Deployment # o tipo do objeto a ser criado
+metadata: # informações que ajudam a identificar de forma única o objeto (por exemplo: name & UID)
+  name: mysql
+  namespace: labwordpress
+  labels: # diferentemente de nomes e UIDs, os label geralmente não são únicos
+    app: wordpress
+spec: # estado do Deployment a ser criado
+  selector:
+    matchLabels: # seleciona objetos com os seguintes labels
+      app: wordpress
+      tier: mysql
+  strategy: # estratégia que é usada para substituir pods
+    type: Recreate # encera pods e os substitui por novos
+  template: # descreve os pods que serão criados
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec: # estado dos pods a serem criados
+      containers: # lista do(s) container(s) que o pod possui
+      - image: mysql:8.0.31 # imagem do container
+        name: mysql # nome do container
+        resources:
+          limits:
+            memory: 512M
+            cpu: 1
+        env: # environment variables do container
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password.txt
+        ports: # lista da portas a serem expostas do container
+        - containerPort: 3308 # número da porta
+          name: mysql # nome da porta, dever ser único dentro do pod
