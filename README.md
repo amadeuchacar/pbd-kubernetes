@@ -26,11 +26,56 @@
 
 ## 2. Execução
 ### 2.1 Abra o PowerShell e entre no local onde os arquivos .yaml estão presentes
-### 2.2 Como solicitado, crie um namespace labwordpress: kubectl create namespace labwordpress
+### 2.2 Como solicitado, crie um namespace labwordpress
 ```
  kubectl create namespace labwordpress
 ```  
-### 2.3
+### 2.3 Entre no namespace criado
+```
+kubectl config set-context --current --namespace=labwordpress
+```  
+### 2.4 Suba o arquivo de serviço MySQL 
+```
+kubectl apply -f mysql-service.yaml
+```  
+### 2.5 Crie um arquivo secret password.txt com uma senha dentro
+### 2.6 Use o comando para criar o sescret
+```
+kubectl create secret generic mysql-pass --from-file=password.txt -n labwordpress
+```  
+### 2.7 Verifique se secret foi criado 
+```
+kubectl get secret
+```  
+### 2.8 Suba o arquivo Persistent Volume Claim (PVC) do MySQL
+```
+kubectl apply -f mysql-pvc.yaml
+```  
+### 2.9 Suba o arquivo deployment MySQL
+```
+kubectl apply -f mysql-deployment.yaml
+```  
+### 2.10 Suba o arquivo de serviço wordpress
+```
+kubectl apply -f wordpress-service.yaml
+``` 
+### 2.11 Suba o arquivo Persistent Volume Claim (PVC) do wordpress
+```
+kubectl apply -f wordpress-pvc.yaml
+``` 
+### 2.12 Suba o arquivo deployment wordpress
+```
+kubectl apply -f wordpress-pvc.yaml
+``` 
+### 2.13 Suba o aquivo deployment wordpress
+```
+kubectl apply -f wordpress-deployment.yaml
+``` 
+### 2.14 Por fim, suba o arquivo ingress
+```
+kubectl apply -f wordpress-ingress.yaml
+``` 
+
 
  
  
