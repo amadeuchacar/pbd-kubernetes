@@ -18,15 +18,15 @@ Esta documentação explicitará os passos para serem executados tanto no sistem
 - Windows 10 de 64 bits: Home ou Pro 21H1 (build 19043) ou superior, ou Enterprise ou Education 20H2 (build 19042) ou superior
 
 ### 1. Configuração
-1.1) Abra o docker desktop
+1. Abra o docker desktop
 
-1.2) Vá no ícone de configuração
+2. Vá no ícone de configuração
 
-1.3) Aba Kubernetes
+3. Aba Kubernetes
 
-1.4) "Enable Kubernetes"
+4. "Enable Kubernetes"
 
-1.5) "Apply & restart"
+5. "Apply & restart"
 
 ![Conf kubernetes](https://user-images.githubusercontent.com/91745101/203157780-e1f68a61-ab98-49fe-b812-87221d655718.png)
 
