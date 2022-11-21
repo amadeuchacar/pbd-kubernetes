@@ -3,7 +3,10 @@ kind: Ingress
 metadata: # informações que ajudam a identificar de forma única o objeto (por exemplo: name & UID)
   name: wordpress
   namespace: labwordpress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules: # configurações do ingress
   - http:
       paths:
