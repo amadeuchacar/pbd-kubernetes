@@ -40,3 +40,10 @@ spec: # estado do Deployment a ser criado
         ports: # lista da portas a serem expostas do container
         - containerPort: 80 # número da porta
           name: wordpress # nome da porta, dever ser único dentro do pod
+        volumeMounts: # volumes a serem montados dentro do filesystem do container
+        - name: wordpress-persistent-storage-lab
+          mountPath: /var/www/html
+      volumes: # lista dos volumes que podem ser montados dentro dos containers do pod
+      - name: wordpress-persistent-storage-lab
+        persistentVolumeClaim: # referencia para um PersistentVolumeClaim dentro do mesmo namespace
+          claimName: wp-pv-claim
