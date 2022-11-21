@@ -16,7 +16,7 @@ Esta documentação explicitará os passos para serem executados tanto no sistem
 - 4GB de RAM
 - Windows 11 de 64 bits: Home ou Pro versão 21H2 ou superior, ou Enterprise ou Education versão 21H2 ou superior
 - Windows 10 de 64 bits: Home ou Pro 21H1 (build 19043) ou superior, ou Enterprise ou Education 20H2 (build 19042) ou superior
-- Kubernetes (este pode ser utilizado via [**kubeadm**](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) e [**mikikube**](https://minikube.sigs.k8s.io/docs/start/) ou via Docker Desktop for Windows)
+- Kubernetes (este pode ser utilizado via [**kubeadm**](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) + [**mikikube**](https://minikube.sigs.k8s.io/docs/start/) ou via Docker Desktop for Windows)
 
 *Ao longo desta documentação será explicitado o passo a passo para utilização via Docker Desktop for Windows, porém para minikube não existem muitas diferenças.*
 
