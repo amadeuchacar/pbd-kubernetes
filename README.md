@@ -1,5 +1,5 @@
 # PB DevSecOps Compass.uol - Atividade de Kubernetes
-### Realizada por Amadeu Chacar, Luiz Gustavo Albuquerque e Rodrigo Pacheco
+### Realizada por Amadeu Chacar, Luiz Gustavo Albuquerque e Rodrigo Pacheco de Almeida
 
 ## Objetivo
 *Aplicar os conhecimentos adquiridos na trilha de Kubernetes, subindo uma aplicação Wordpress com banco de dados MySQL utilizando a ferramenta de orquestração de containers*
